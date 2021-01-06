@@ -2,6 +2,7 @@ package com.umar.restclient
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
 import android.view.View
 import android.widget.AdapterView
 import android.widget.Toast
@@ -14,10 +15,7 @@ import com.androidnetworking.interfaces.JSONObjectRequestListener
 import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONObject
 
-class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
-    val EXTRA_URL = "imageUrl"
-    val EXTRA_CREATOR = "creatorName"
-    val EXTRA_LIKES = "likeCount"
+class MainActivity : AppCompatActivity() {
 
     //array untuk menyimpan data dari JSON
     val dataPenduduk = ArrayList<Penduduk>()
@@ -37,8 +35,10 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
         fab1.setOnClickListener {
             startActivity(Intent(this, CreateActivity::class.java))
         }
-
-
+    }
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return super.onCreateOptionsMenu(menu)
     }
 
     //function mengambil data dijalankan kembali setelah resume
@@ -76,7 +76,8 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
                                         jsonObject.getString("alamat"),
                                         jsonObject.getString("tgl_lahir"),
                                         jsonObject.getString("telp"),
-                                        jsonObject.getString("email")
+                                        jsonObject.getString("email"),
+                                        jsonObject.getInt("id")
                                 )
                         )
 
@@ -97,10 +98,6 @@ class MainActivity : AppCompatActivity(), AdapterView.OnItemClickListener {
                     ).show()
                 }
             })
-    }
-
-    override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        TODO("Not yet implemented")
     }
 
     //FAB

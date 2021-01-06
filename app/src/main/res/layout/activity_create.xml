@@ -12,7 +12,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nama Lengkap"
+        android:hint="@string/txt_hint_nama_lengkap"
         android:id="@+id/inp_nama"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="10dp"/>
@@ -20,14 +20,14 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Alamat"
+        android:hint="@string/txt_hint_alamat"
         android:id="@+id/inp_alamat"
         android:layout_marginBottom="10dp"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Telepon"
+        android:hint="@string/txt_hint_telepon"
         android:id="@+id/inp_telepon"
         android:layout_marginBottom="10dp"
         android:inputType="phone"/>
@@ -35,7 +35,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
+        android:hint="@string/txt_hint_email"
         android:id="@+id/inp_email"
         android:layout_marginBottom="10dp"
         android:inputType="textEmailAddress"/>
@@ -44,10 +44,8 @@
         android:id="@+id/tmb_tambah"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tambah Data"
-        android:layout_marginTop="40dp"
-        android:textSize="25sp"
-        android:paddingHorizontal="40dp"
+        android:text="@string/txt_btn_tambah_data"
+
         />
 
 </LinearLayout>

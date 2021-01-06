@@ -10,5 +10,6 @@ data class Penduduk(
         val alamat:String?,
         val tgl_lahir:String?,
         val telp:String?,
-        val email:String?
+        val email:String?,
+        val idUser: Int?
         ) : Parcelable

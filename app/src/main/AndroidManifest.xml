@@ -12,7 +12,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RESTClient">
-        <activity android:name=".DetailActivity"></activity>
         <activity android:name=".CreateActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

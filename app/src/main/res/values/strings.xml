@@ -2,4 +2,14 @@
     <string name="app_name">REST Client</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txt_btn_delete">Hapus</string>
+    <string name="txt_menu_edit_data">Edit Data</string>
+    <string name="txt_menu_refresh">Refresh</string>
+    <string name="txt_menu_about_umar">About Umar</string>
+    <string name="txt_btn_tambah_data">Tambah Data</string>
+    <string name="txt_hint_email">Email</string>
+    <string name="txt_hint_telepon">Telepon</string>
+    <string name="txt_hint_alamat">Alamat</string>
+    <string name="txt_hint_nama_lengkap">Nama Lengkap</string>
+    <string name="txt_btn_update_data">Update Data</string>
 </resources>

@@ -46,6 +46,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:paddingHorizontal="40dp"
-        android:text="Update Data" />
+        android:text="@string/txt_btn_update_data" />
 
 </LinearLayout>
