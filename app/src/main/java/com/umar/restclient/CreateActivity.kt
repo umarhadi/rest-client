@@ -30,7 +30,7 @@ class CreateActivity : AppCompatActivity() {
                     override fun onResponse(response: JSONObject) {
 
                         this@CreateActivity.finish()
-                        Toast.makeText(this@CreateActivity, "sukses tambah data", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@CreateActivity, "Tambah Data Berhasil", Toast.LENGTH_SHORT).show()
                     }
 
                     override fun onError(anError: ANError?) {

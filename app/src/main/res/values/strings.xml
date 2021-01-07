@@ -12,4 +12,6 @@
     <string name="txt_hint_alamat">Alamat</string>
     <string name="txt_hint_nama_lengkap">Nama Lengkap</string>
     <string name="txt_btn_update_data">Update Data</string>
+    <string name="txt_edit_info">Untuk edit data, jangan lupa memasukkan ID User</string>
+    <string name="txt_hint_masukkan_id_user_yang_diedit">Masukkan ID User yang diedit</string>
 </resources>
