@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        supportActionBar?.title = "API Data Penduduk"
 
         //inisialisasi recycler view
         recycle_view_1.setHasFixedSize(true)
@@ -36,35 +37,10 @@ class MainActivity : AppCompatActivity() {
         getDataPenduduk()
 
         //pindah ke activity create
-
         fab1.setOnClickListener {
             startActivity(Intent(this, CreateActivity::class.java))
         }
 
-        /*btnDelete.setOnClickListener {
-            // build alert dialog
-            val dialogBuilder = AlertDialog.Builder(this)
-
-            // set message of alert dialog
-            dialogBuilder.setMessage("Do you want to close this application ?")
-                // if the dialog is cancelable
-                .setCancelable(false)
-                // positive button text and action
-                .setPositiveButton("Proceed", DialogInterface.OnClickListener {
-                        dialog, id -> delete()
-                })
-                // negative button text and action
-                .setNegativeButton("Cancel", DialogInterface.OnClickListener {
-                        dialog, id -> dialog.cancel()
-                })
-
-            // create dialog box
-            val alert = dialogBuilder.create()
-            // set title for alert dialog box
-            alert.setTitle("AlertDialogExample")
-            // show alert dialog
-            alert.show()
-        }*/
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
@@ -85,7 +61,8 @@ class MainActivity : AppCompatActivity() {
                 getDataPenduduk()
             }
             R.id.action_umar -> {
-
+                startActivity(Intent(this, UmarActivity::class.java))
+                return true
             }
             else -> return super.onOptionsItemSelected(item)
         }

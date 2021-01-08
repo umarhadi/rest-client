@@ -35,6 +35,13 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="@string/txt_hint_format_tgl"
+        android:id="@+id/edtTgl"
+        android:layout_marginBottom="10dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:hint="@string/txt_hint_telepon"
         android:id="@+id/edtTelp"
         android:layout_marginBottom="10dp"

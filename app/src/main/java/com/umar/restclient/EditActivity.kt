@@ -14,13 +14,17 @@ class EditActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit)
+        supportActionBar?.title = "Edit Data"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
 
         btnUpdate.setOnClickListener {
+            //bukan API Lokal
             AndroidNetworking.put("https://api.umarhadi.xyz/index.php/penduduk")
                 .addBodyParameter("id", edtID.text.toString())
                 .addBodyParameter("nama", edtNama.text.toString())
                 .addBodyParameter("alamat", edtAlamat.text.toString())
-                //.addBodyParameter("tgl_lahir", inp_tgl_lahir.text.toString())
+                .addBodyParameter("tgl_lahir", edtTgl.text.toString())
                 .addBodyParameter("telp", edtTelp.text.toString())
                 .addBodyParameter("email", edtEmail.text.toString())
                 .setPriority(Priority.MEDIUM)
@@ -42,5 +46,9 @@ class EditActivity : AppCompatActivity() {
                     }
                 })
         }
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

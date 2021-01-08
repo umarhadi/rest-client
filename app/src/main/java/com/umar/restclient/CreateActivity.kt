@@ -15,13 +15,15 @@ class CreateActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create)
+        supportActionBar?.title = "Tambah Data"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         tmb_tambah.setOnClickListener {
-
+            //bukan API Lokal
             AndroidNetworking.post("https://api.umarhadi.xyz/index.php/penduduk")
                 .addBodyParameter("nama", inp_nama.text.toString())
                 .addBodyParameter("alamat", inp_alamat.text.toString())
-                //.addBodyParameter("tgl_lahir", inp_tgl_lahir.text.toString())
+                .addBodyParameter("tgl_lahir", inp_tgl.text.toString())
                 .addBodyParameter("telp", inp_telepon.text.toString())
                 .addBodyParameter("email", inp_email.text.toString())
                 .setPriority(Priority.MEDIUM)
@@ -43,5 +45,9 @@ class CreateActivity : AppCompatActivity() {
                     }
                 })
         }
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

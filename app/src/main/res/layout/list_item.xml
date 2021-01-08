@@ -23,6 +23,7 @@
 
             <TextView
                 android:id="@+id/nama"
+                android:textColor="@color/purple_500"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
