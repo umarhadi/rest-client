@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    tools:context=".EditFragment"
+    tools:context=".EditActivity"
     android:id="@+id/frame_container"
     android:padding="5dp">
 

@@ -14,4 +14,9 @@
     <string name="txt_btn_update_data">Update Data</string>
     <string name="txt_edit_info">Untuk edit data, jangan lupa memasukkan ID User</string>
     <string name="txt_hint_masukkan_id_user_yang_diedit">Masukkan ID User yang diedit</string>
+    <string name="dialog_konfirmasi">Hapus data ini?</string>
+    <string name="option_yes">Ya</string>
+    <string name="option_no">Tidak</string>
+    <string name="txt_hint_delete">Masukkan ID User yang dihapus</string>
+    <string name="txt_menu_delete_data">Delete Data</string>
 </resources>

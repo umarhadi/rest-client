@@ -17,12 +17,13 @@ class RVAdapterPenduduk (private val context: Context, private val arrayList: Ar
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
+        holder.view.idUser.text = "ID User: "+arrayList?.get(position)?.idUser.toString()
         holder.view.nama.text = arrayList?.get(position)?.nama
-        holder.view.alamat.text = arrayList?.get(position)?.alamat
-        holder.view.tgl_lahir.text = arrayList?.get(position)?.tgl_lahir
-        holder.view.telp.text = arrayList?.get(position)?.telp
-        holder.view.email.text = arrayList?.get(position)?.email
-        holder.view.idUser.text = arrayList?.get(position)?.idUser.toString()
+        holder.view.alamat.text = "Alamat: "+arrayList?.get(position)?.alamat
+        holder.view.tgl_lahir.text = "Tanggal Lahir: "+arrayList?.get(position)?.tgl_lahir
+        holder.view.telp.text = "Telepon: "+arrayList?.get(position)?.telp
+        holder.view.email.text = "Email: "+arrayList?.get(position)?.email
+
     }
 
     override fun getItemCount(): Int = arrayList!!.size

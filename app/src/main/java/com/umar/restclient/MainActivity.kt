@@ -1,11 +1,13 @@
 package com.umar.restclient
 
-import android.accounts.Account
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.androidnetworking.AndroidNetworking
@@ -13,6 +15,7 @@ import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.JSONObjectRequestListener
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.list_item.*
 import org.json.JSONObject
 
 
@@ -33,9 +36,35 @@ class MainActivity : AppCompatActivity() {
         getDataPenduduk()
 
         //pindah ke activity create
+
         fab1.setOnClickListener {
             startActivity(Intent(this, CreateActivity::class.java))
         }
+
+        /*btnDelete.setOnClickListener {
+            // build alert dialog
+            val dialogBuilder = AlertDialog.Builder(this)
+
+            // set message of alert dialog
+            dialogBuilder.setMessage("Do you want to close this application ?")
+                // if the dialog is cancelable
+                .setCancelable(false)
+                // positive button text and action
+                .setPositiveButton("Proceed", DialogInterface.OnClickListener {
+                        dialog, id -> delete()
+                })
+                // negative button text and action
+                .setNegativeButton("Cancel", DialogInterface.OnClickListener {
+                        dialog, id -> dialog.cancel()
+                })
+
+            // create dialog box
+            val alert = dialogBuilder.create()
+            // set title for alert dialog box
+            alert.setTitle("AlertDialogExample")
+            // show alert dialog
+            alert.show()
+        }*/
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
@@ -46,6 +75,10 @@ class MainActivity : AppCompatActivity() {
         when (item.itemId) {
             R.id.action_edit -> {
                 startActivity(Intent(this, EditActivity::class.java))
+                return true
+            }
+            R.id.action_delete -> {
+                startActivity(Intent(this, DeleteActivity::class.java))
                 return true
             }
             R.id.action_refresh -> {
@@ -68,6 +101,7 @@ class MainActivity : AppCompatActivity() {
 
     //function ambil data
     fun getDataPenduduk(){
+        pbLoading.visibility = View.VISIBLE
 
         //HTTP request menggunakan Fast Android Networking
         AndroidNetworking.get("https://api.umarhadi.xyz/index.php/penduduk")
@@ -106,6 +140,8 @@ class MainActivity : AppCompatActivity() {
                             val adapter = RVAdapterPenduduk(applicationContext, dataPenduduk)
                             adapter.notifyDataSetChanged()
                             recycle_view_1.adapter = adapter
+                            pbLoading.visibility = View.GONE
+
                         }
                     }
 
@@ -120,8 +156,5 @@ class MainActivity : AppCompatActivity() {
                 }
             })
     }
-
-
-    //FAB
 
 }

@@ -16,7 +16,6 @@ class EditActivity : AppCompatActivity() {
         setContentView(R.layout.activity_edit)
 
         btnUpdate.setOnClickListener {
-
             AndroidNetworking.put("https://api.umarhadi.xyz/index.php/penduduk")
                 .addBodyParameter("id", edtID.text.toString())
                 .addBodyParameter("nama", edtNama.text.toString())
