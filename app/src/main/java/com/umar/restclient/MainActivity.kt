@@ -1,13 +1,20 @@
+/*
+ *     REST Client
+ *     MainActivity.kt
+ *     Created by Umar Hadi Siswanto on 12/1/2021
+ *     email    : uhsiswanto@icloud.com
+ *     website 	: https://blog.umarhadi.xyz
+ *     Copyright © 2021 Umar Hadi Siswanto. All rights reserved.
+ */
+
 package com.umar.restclient
 
-import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.androidnetworking.AndroidNetworking
